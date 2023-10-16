@@ -22,7 +22,7 @@ const chosenOption: Record<
     placeholder: 'Enter Keyword',
   },
   Website: {
-    inputType: 'url',
+    inputType: 'text',
     placeholder: 'Enter Website',
   },
 };
