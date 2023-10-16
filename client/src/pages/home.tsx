@@ -7,7 +7,7 @@ export const HomePage = () => {
   return (
     <main className={'min-h-screen flex flex-col'}>
       <Header right={<Profile />} />
-      <div className={'grid grid-cols-[150px_1fr]'}>
+      <div className={'grid grid-rows-[1fr] sm:grid-cols-[150px_1fr]'}>
         <aside className={'px-5 pt-10'}>
           <ToggleBlockingButton className={'w-full'} />
         </aside>

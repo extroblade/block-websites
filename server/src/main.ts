@@ -3,10 +3,10 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as cookieParser from 'cookie-parser';
 import { ValidationPipe } from '@nestjs/common';
-import * as process from 'process';
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const config = new DocumentBuilder().setTitle('Block list').build();
+  const config = new DocumentBuilder().setTitle('Easy Block').build();
 
   const document = SwaggerModule.createDocument(app, config);
 
@@ -22,8 +22,6 @@ async function bootstrap() {
   });
   app.useGlobalPipes(new ValidationPipe());
 
-  await app.listen(process.env.port || 7000);
+  await app.listen(7000);
 }
-bootstrap().then(() =>
-  console.log(`started on PORT:${process.env.port || 7000}`),
-);
+bootstrap();

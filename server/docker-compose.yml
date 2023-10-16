@@ -1,15 +1,31 @@
 version: '3.9'
 
 services:
+  node:
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "7000:7000"
+    restart: always
   db:
     image: postgres:14.1-alpine
-    restart: always
+    env_file:
+      - .env
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - '5432:5432'
     volumes:
       - db:/var/lib/postgresql/data
+    restart: unless-stopped
 volumes:
   db:

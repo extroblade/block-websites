@@ -26,10 +26,8 @@
 ---
 
 ### Server:
-- Nest.js, TypeScript, Swagger, Prisma, Postgres(Docker),
+- Nest.js, TypeScript, Docker, Swagger, Prisma, Postgres
 ```shell
     cd server
     docker compose up
-    npm install
-    npm run start:dev
 ```
