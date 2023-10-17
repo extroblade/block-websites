@@ -31,3 +31,17 @@
     cd server
     docker compose up
 ```
+
+---
+
+### /server/.env example
+
+```shell
+    POSTGRES_USER='postgres'
+    
+    POSTGRES_PASSWORD='postgres'
+    
+    DATABASE_URL='postgresql://postgres:postgres@db:5432/postgres?schema=public'
+    
+    JWT_SECRET='super-secret-key'
+```
